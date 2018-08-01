@@ -1,0 +1,32 @@
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    /* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта */
+    #menu {
+        position: absolute;
+        background: white;
+        max-height: 0;
+        float: none;
+        top: 63px;
+        left: 0;
+        width: 100%;
+        right: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        z-index: 3;
+
+    }
+    #menu li{
+        display: block;
+        padding-left: 15px;
+        border-bottom: 1px solid silver;
+        margin-right: 0;
+    }
+}
