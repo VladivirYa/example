@@ -33,8 +33,16 @@ body {
     background: #f7f7f7;
 }
 
+/* стилевой класс, который управляет шириной контейнера сетки*/
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 960px;
+    padding: 0 15px;
+}
+
 /* добавим очистку потока для всех контейнеров, внутри которых задано обтекание дочерних элементов */
-header:after, .container:after, footer:after, .widget-posts-list li:after, #subscribe:after {
+header:after, .container:after, .clearfix:after, footer:after, .widget-posts-list li:after, #subscribe:after {
     content: "";
     display: table;
     clear: both;
@@ -51,7 +59,7 @@ header:after, .container:after, footer:after, .widget-posts-list li:after, #subs
 }
 
 .loader .loader_inner {
-    background: url("../img/logo.png") no-repeat center center / cover #fff;
+    background: url("../img/lemon.png") no-repeat center center / cover #fff;
     height: 150px;
     width: 150px;
     margin-top: -75px;
@@ -145,13 +153,7 @@ header:after, .container:after, footer:after, .widget-posts-list li:after, #subs
     -o-animation: circle 1.25s ease-in-out infinite;
     animation: circle 1.25s ease-in-out infinite;
 }
-/* стилевой класс, который управляет шириной контейнера сетки*/
-.container {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 960px;
-    padding: 0 15px;
-}
+
 
 header {
     width: 100%;
@@ -297,5 +299,96 @@ nav {
 
 /* класс, который будет добавлен в верхнему меню при нажатии на кнопку и покажет скрытое меню*/
 #menu.active {
-    max-height: 120px;
+    max-width: 100%;
+}
+
+.posts-list{
+    margin-bottom: 30px;
+    float: left;
+    width: 64%;
+}
+
+.post-1{
+
+}
+.post{
+    margin-bottom: 30px;
+}
+
+.post-1__img{
+    margin-bottom: 20px;
+}
+
+.post-1__content{
+
+}
+
+.category{
+    margin-bottom: 15px;
+}
+.category a{
+    color: #F8B763;
+    text-transform: uppercase;
+}
+
+.post-1__title{
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.post-1__content p{
+    line-height: 1.5;
+}
+.post-1__footer{
+    border-top: 1px solid #EBEBE3;
+    border-bottom: 1px solid #EBEBE3;
+    margin-top: 15px;
+    position: relative;
+}
+
+.post-1__footer-link{
+    padding:0 22px;
+    background: #3C3D41;
+    color: white;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    font-size: 10px;
+    line-height: 44px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    position:relative;
+}
+.post-1__footer-link:after{
+    content: '';
+    display: block;
+    right: 0;
+    top: 0;
+    position:absolute;
+    border: solid transparent;
+    border-width: 22px 18px;
+    border-left-color: #3C3D41;
+    transform: translateX(100%);
+}
+
+.post-1__social{
+    position: absolute;
+    left: auto;
+    top: 50%;
+    right: 0;
+    text-align: right;
+    transform: translateY(-50%);
+    padding: 0;
+    font-size: 12px;
+}
+
+.post-1__social a {
+    display: inline-block;
+    margin-left: 8px;
+    color: #F8B763;
+    width: 25px;
+    height: 25px;
+    line-height: 23px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid;
 }
