@@ -40,6 +40,111 @@ header:after, .container:after, footer:after, .widget-posts-list li:after, #subs
     clear: both;
 }
 
+.loader {
+    background: repeat scroll 0 0 #ffffff;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+.loader .loader_inner {
+    background: url("../img/logo.png") no-repeat center center / cover #fff;
+    height: 150px;
+    width: 150px;
+    margin-top: -75px;
+    margin-left: -75px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+}
+
+@-webkit-keyframes circle {
+    from, 20%, 40%, 60%, 80%, to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(.9, .9, .9);
+        transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        -webkit-transform: scale3d(.97, .97, .97);
+        transform: scale3d(.97, .97, .97);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes circle {
+    from, 20%, 40%, 60%, 80%, to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        -webkit-transform: scale3d(.9, .9, .9);
+        transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        -webkit-transform: scale3d(.97, .97, .97);
+        transform: scale3d(.97, .97, .97);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+.circle {
+    -webkit-animation: circle 1.25s ease-in-out infinite;
+    -o-animation: circle 1.25s ease-in-out infinite;
+    animation: circle 1.25s ease-in-out infinite;
+}
 /* стилевой класс, который управляет шириной контейнера сетки*/
 .container {
     margin: 0 auto;
@@ -150,7 +255,7 @@ nav {
 }
 
 /* кнопка переключения меню, появляющаяся при ширине 768px */
-.nav-toggle{
+.nav-toggle {
     display: none;
     position: relative;
     width: 40px;
@@ -158,10 +263,10 @@ nav {
     float: right;
     background: #EF5A42;
     cursor: pointer;
-    
+
 }
 
-.nav-toggle span{
+.nav-toggle span {
     content: "";
     position: absolute;
     height: 2px;
@@ -172,7 +277,7 @@ nav {
     display: block;
 }
 
-.nav-toggle span:before, .nav-toggle span:after{
+.nav-toggle span:before, .nav-toggle span:after {
     content: "";
     position: absolute;
     left: 0;
@@ -181,13 +286,16 @@ nav {
     height: 2px;
     background: white;
 }
-.nav-toggle span:before{
+
+.nav-toggle span:before {
     top: -10px;
 }
-.nav-toggle span:after{
+
+.nav-toggle span:after {
     bottom: -10px;
 }
+
 /* класс, который будет добавлен в верхнему меню при нажатии на кнопку и покажет скрытое меню*/
-#menu.active{
+#menu.active {
     max-height: 120px;
 }
